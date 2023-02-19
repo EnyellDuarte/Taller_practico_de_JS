@@ -1,25 +1,15 @@
 const h1 = document.querySelector('h1');
-const p = document.querySelector('p');
-const parrafito = document.querySelector('.parrafito');
-const pid = document.querySelector('#pid');
-const input = document.querySelector('input');
-console.log(h1);
-console.log({
-    h1,
-    p,
-    parrafito,
-    pid,
-    input,
-});
+const form = document.querySelector('#formulario')
+const input1 = document.querySelector('#calculo1');
+const input2 = document.querySelector('#calculo2');
+const btn = document.querySelector('#btnCalcular')
+const result = document.querySelector('#resultado');
 
-h1.innerHTML = 'Hola <br> Genio :)';
-//element.innerHTML nos permite cambiar o agregar código html desde JS en el ejemplo de arriba podemos ver como cambiamos el elemento h1 por hola (salto de línea) feo
- h1.setAttribute('class', 'rojo');
- // element.setAttribute nos permite cambiar o agreagar el valor de una clase. De un elemento HTML desde JS.
+form.addEventListener('submit', sumarInputValues);
 
- const img = document.createElement('img');
- img.setAttribute('src', 'https://www.emerisis.com/media/Hacker-scaled.jpeg');
-
- console.log(img);
-  
-pid.append(img);
+function sumarInputValues(event){
+    console.log({event});
+    event.preventDefault();
+    let sumaInputs = parseInt(input1.value) + parseInt(input2.value);
+    result.innerHTML = "Resultado " + sumaInputs;
+};
